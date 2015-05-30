@@ -1,5 +1,6 @@
 package learning;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -29,10 +30,21 @@ public class PersistenceTest {
     @Test
     public void saveMessage() {
         Message message = new Message("test message");
+        //message.setBody("test message");
         Session session = factory.openSession();
         Transaction tx = session.beginTransaction();
         session.persist(message);
         tx.commit();
+        session.close();
+    }
+
+    @Test
+    public void readAllMessages() {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Message m");
+        query.list()
+                .stream()
+                .forEach(System.out::println);
         session.close();
     }
 }
