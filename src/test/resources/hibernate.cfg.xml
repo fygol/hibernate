@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--  Database connection settings  -->
+        <property name="connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+        <property name="connection.url">jdbc:derby://localhost:1527//home/alexxx/Projects/learning/hibernate/.testdb;create=true</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password">sa</property>
+        <property name="dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+
+        <!--  Echo all executed SQL to stdout  -->
+        <property name="show_sql">true</property>
+
+        <!--  Drop and re-create the database schema on startup  -->
+        <!--<property name="hbm2ddl.auto">create-drop</property>-->
+
+        <mapping class="learning.Message"/>
+    </session-factory>
+
+</hibernate-configuration>
