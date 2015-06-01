@@ -1,5 +1,6 @@
 package learning;
 
+import learning.hibernate.xmlmapping.Message;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
