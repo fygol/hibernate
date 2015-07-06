@@ -1,6 +1,7 @@
 package learning;
 
 import learning.hibernate.xmlmapping.Message;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,8 +9,12 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+//import org.testng.annotations.BeforeSuite;
+//import org.testng.annotations.Test;
 
 /**
  * Created by John Smith on 30/05/15.
@@ -18,7 +23,7 @@ public class PersistenceTest {
 
     SessionFactory factory;
 
-    @BeforeSuite
+    @BeforeClass
     public void setup() {
         Configuration configuration = new Configuration();
         configuration.configure();

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="learning.hibernate.xmlmapping.User" table="USERS">
+
+        <id name="id" column="USER_ID">
+            <generator class="increment"/>
+        </id>
+
+        <property name="name" column="USER_NAME"/>
+        <property name="email" column="USER_EMAIL"/>
+
+    </class>
+</hibernate-mapping>
