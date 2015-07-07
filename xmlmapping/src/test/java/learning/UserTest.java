@@ -59,5 +59,4 @@ public class UserTest {
         assertEquals(user.getEmail(), actualUser.getEmail());
     }
 
-
 }
